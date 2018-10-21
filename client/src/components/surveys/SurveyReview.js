@@ -5,11 +5,12 @@ import * as actions from '../../actions';
 
 
 const SurveyReview = ({onCancle, formValues,submitSurvey}) => {
+    console.log('formValues is ', formValues);
     const reviewFields = formFields.map(field=>{
         return (
             <div key={field.name}>
                 <label>{field.label}</label>
-                <div>{field.name}</div>
+                <div>{formValues[field.name]}</div>
             </div>
         );
     })
