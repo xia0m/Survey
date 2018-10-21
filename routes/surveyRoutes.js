@@ -1,4 +1,4 @@
-
+const _ = require('lodash');
 const Path = require('path-parser').default;
 const {URL} = require('url');
 const mongoose = require('mongoose');
@@ -16,15 +16,22 @@ module.exports = app => {
     });
 
     app.post('/api/surveys/webhooks',(req,res)=>{
+
+        const p = new Path('/api/surveys/:surveyId/:choice');
+
         const events = req.body.map(event=>{
-            const pathname = new URL(event.url).pathname;
-            const p = new Path('/api/surveys/:surveyId/:choice');
+            const pathname = new URL(event.url).pathname; 
             const match = p.test(pathname);
             if(match){
                 return {email:event.email,surveyId:match.surveyId,choice:match.choice};
             }
         });
-        console.log(events);
+        const compactEvents = _.compact(events);
+        //extract only events
+        const uniqueEvents = _.uniqBy(compactEvents,'email','surveyId');
+        //remove the duplicate email response
+        res.send({});
+
     });
 
     app.post('/api/surveys',requireLogin, requireCredits, async (req,res)=>{
