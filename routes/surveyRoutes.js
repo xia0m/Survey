@@ -11,7 +11,7 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app => {
 
-    app.get('/api/surveys/thanks',(req,res)=>{
+    app.get('/api/surveys/:surveyId/:choice',(req,res)=>{
         res.send('thanks for voting');
     });
 
@@ -19,16 +19,28 @@ module.exports = app => {
 
         const p = new Path('/api/surveys/:surveyId/:choice');
 
-        const events = req.body.map(event=>{
+        const events = _.chain(req.body).map(event=>{
             const pathname = new URL(event.url).pathname; 
             const match = p.test(pathname);
             if(match){
                 return {email:event.email,surveyId:match.surveyId,choice:match.choice};
             }
-        });
-        const compactEvents = _.compact(events);
-        //extract only events
-        const uniqueEvents = _.uniqBy(compactEvents,'email','surveyId');
+        })
+        .compact()
+        .uniqBy('email','surveyId')
+        .each(({surveyId,email,choice})=>{
+            Survey.updateOne({
+                _id:surveyId,
+                recipients:{
+                    $elemMatch:{email:email,responded:false}
+                }
+            },{
+                $inc:{[choice]:1},
+                $set:{'recipients.$.responded':true}
+            }).exec();
+        })
+        .value();
+        
         //remove the duplicate email response
         res.send({});
 
@@ -43,7 +55,8 @@ module.exports = app => {
             body,
             recipients:recipients.split(',').map(email=>({email:email.trim()})),
             _user: req.user.id,
-            dateSent:Date.now()
+            dateSent:Date.now(),
+            lastResponded: new Date()
         })
 
         const mailer = new Mailer(survey,surveyTemplate(survey));
