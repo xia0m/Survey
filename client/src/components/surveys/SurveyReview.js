@@ -6,7 +6,7 @@ import * as actions from '../../actions';
 
 
 const SurveyReview = ({onCancle, formValues,submitSurvey,history}) => {
-    console.log('formValues is ', formValues);
+    // console.log('formValues is ', formValues);
     const reviewFields = formFields.map(field=>{
         return (
             <div key={field.name}>
