@@ -7,6 +7,7 @@ The document is divided into several sections:
 * [Installation](#installation)
 * [Usage](#usage)
 * [Deployment](#deployment)
+* [LICENSE](#license)
 ## Preparation
 * [Setup Google client ID and secret](https://developers.google.com/adwords/api/docs/guides/authentication)
 	* Under Google APIs console, create a new project
@@ -60,3 +61,5 @@ npm run dev
 * Once your create your project, go to project’s settings and create according environment variables one by one.
 * Do the same process as Setting up Google Id and secret, just change the web address from localhost:3000, hocalhost:5000 to \<your-app-address\>and \<your-app-address\>/auth/google/callback
 
+## LICENSE
+  Licensed under the [MIT](./LICENSE) License.
