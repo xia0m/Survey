@@ -1,10 +1,10 @@
-const keys = require('../../config/keys').keys
+const keys = require('../../config/keys');
 
-module.exports = (survey) => {
-  return `
-  <html>
-  	<head>
-  		<style type="text/css">
+module.exports = (survey)=>{
+    return `
+        <html>
+					<head>
+					<style type="text/css">
   			@import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -92,22 +92,22 @@ module.exports = (survey) => {
   				margin: 1rem;
   			}
   		</style>
-  	</head>
-  	<body>
-  		<div style="text-align: center">
-  			<h1>Ez Survey</h1>
-  			<h2>We'd like your inputs!</h2>
-  			<p>Please, help us answering the folowing question:</p>
-  			<h3>${survey.body}</h3>
-  			<div>
-                  <a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
-                  <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
-        </div>
-        <footer>
-          <span>Ez Survey &copy; 2018</span>
-        </footer>
-  		</div>
-  	</body>
-  </html>
-    `
+        	</head>
+          <body>
+						<div style="text-align:center">
+								<h1>Ez Survey</h1>
+								<h2>We'd like your input!</h2>
+								<p>Please, help us answer the following question:</p>
+								<h3>${survey.body}</h3>
+								<div>
+										<a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
+										<a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
+								</div>
+
+								<footer>
+									<span>Ez Survey &copy; 2018</span>
+								</footer>
+						</div>
+          </body>
+        </html>`
 }
