@@ -57,7 +57,7 @@ npm run dev
 * To alter the email template, go to services-\>emailTemplates-\>surveyTemplates.js
 
 ## Deployment
-* This is app is designed to deplopy to [Heroku]((https://devcenter.heroku.com/articles/git))
+* This is app is designed to deplopy to [Heroku](https://devcenter.heroku.com/articles/git)
 * Once your create your project, go to project’s settings and create according environment variables one by one.
 * Do the same process as Setting up Google Id and secret, just change the web address from localhost:3000, hocalhost:5000 to \<your-app-address\>and \<your-app-address\>/auth/google/callback
 
