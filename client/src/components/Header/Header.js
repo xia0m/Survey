@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import Payments from './Payments';
+import Payments from '../Payments';
 class Header extends Component {
 
     renderContent() {
@@ -29,19 +29,37 @@ class Header extends Component {
     render(){
         // console.log(this.props);
         return (
-            <nav>
-                <div className="nav-wrapper">
-                    <Link 
-                        to={this.props.auth ? '/surveys': '/'} 
-                        className="left brand-logo"
-                    >
-                    Ez Survey
-                    </Link>
-                <ul id="nav-mobile" className="right">
-                    {this.renderContent()}
-                </ul>
-                </div>
-            </nav>
+            // <nav>
+            //     <div className="nav-wrapper">
+            //         <Link 
+            //             to={this.props.auth ? '/surveys': '/'} 
+            //             className="left brand-logo"
+            //         >
+            //         Ez Survey
+            //         </Link>
+            //     <ul id="nav-mobile" className="right">
+            //         {this.renderContent()}
+            //     </ul>
+            //     </div>
+            // </nav>
+            <header class="main-header">
+              <nav className="transparent">
+								<div className="container">
+									<div className="nav-wrapper">
+										<a href="/">Ez Survey</a>
+										<ul className="right">
+											<li>
+												<a className="active-link" href="/">Home</a>
+											</li>
+											<li>
+												<a href="#" className="btn purple">Login</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+              </nav>
+							
+            </header>
         )
     }
 }
