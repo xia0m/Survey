@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Payments from '../Payments';
+
+import Showcase from './Showcase';
+import Navbar from './Navbar';
 class Header extends Component {
 
     renderContent() {
@@ -43,21 +46,8 @@ class Header extends Component {
             //     </div>
             // </nav>
             <header class="main-header">
-              <nav className="transparent">
-								<div className="container">
-									<div className="nav-wrapper">
-										<a href="/">Ez Survey</a>
-										<ul className="right">
-											<li>
-												<a className="active-link" href="/">Home</a>
-											</li>
-											<li>
-												<a href="#" className="btn purple">Login</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-              </nav>
+              <Navbar />
+              <Showcase />
 							
             </header>
         )
