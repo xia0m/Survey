@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import Feature from './Feature/';
 import Footer from './Footer/';
+import LoginModal from './LoginModal';
 
 import '../css/main.css'
 
@@ -34,6 +35,9 @@ class App extends Component {
 							<Route exact path="/surveys" component={Dashboard} />
 							<Route path="/surveys/new" component={SurveyNew} />
 							<Footer />
+							<LoginModal />
+
+							
 						
 						</div>
            </BrowserRouter>

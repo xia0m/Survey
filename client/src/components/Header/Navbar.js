@@ -10,7 +10,7 @@ const Navbar = ()=>(
             <a className="active-link" href="/">Home</a>
           </li>
           <li>
-            <a href="#" className="btn purple">Login</a>
+            <a href="#login-modal" className="btn purple modal-trigger">Login</a>
           </li>
         </ul>
       </div>
