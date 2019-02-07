@@ -51,16 +51,20 @@ passport.use(new FacebookStrategy({
     proxy:true
 },
     async (accessToken,refreshToken,profile,done)=>{
-        console.log('profile is ',profile);
-        const existingUser = await User.findOne({email:profile.id})
+        
+        const existingUser = await User.findOne({email:profile.emails[0].value})
         
             if(existingUser){
                 //already have a record
                 done(null,existingUser);
             } else {
                 //user not existed
-                console.log('facebook',profile)
-                const user = await new User({googleId:profile.id}).save();
+                let theUserName = 'New User';
+                if(profile.displayName) theUserName = profile.displayName;
+                const user = await new User({
+                    email:profile.emails[0].value,
+                    userName:theUserName,
+                }).save();
                 done(null,user);
             }
 
