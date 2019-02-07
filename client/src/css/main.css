@@ -26,3 +26,8 @@
   color: #d847f1;
   font-weight: bold;
 }
+
+#login-modal .btn{
+  width:290px;
+
+}
