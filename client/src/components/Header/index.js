@@ -45,7 +45,7 @@ class Header extends Component {
             //     </ul>
             //     </div>
             // </nav>
-            <header class="main-header">
+            <header className="main-header">
               <Navbar />
               <Showcase />
 							

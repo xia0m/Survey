@@ -11,6 +11,11 @@ const LoginModal = ()=>(
           href="/auth/google">
           <i class="fa fa-google"></i> Sign in with google
         </a> 
+        <br />
+        <a className="waves-effect waves-light btn social facebook"
+          href="/auth/facebook">
+          <i class="fa fa-facebook"></i> Sign in with facebook
+        </a> 
       </div>
     </div>	
 	</div>
