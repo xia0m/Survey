@@ -1,10 +1,17 @@
 import React from 'react';
 
+import Header from './Header/';
+import Feature from './Feature/';
+import Footer from './Footer/';
+import LoginModal from './LoginModal';
+
 const Landing = () => {
     return (
-        <div style={{textAlign:'center'}}>
-            <h1>Survey</h1>
-            Collect surverys
+        <div>
+            <Header />
+            <Feature />
+            <Footer />
+            <LoginModal />
         </div>
     )
 };
