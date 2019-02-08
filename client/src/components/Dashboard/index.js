@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import StatSection from './StatSection';
 import RecentEmail from './RecentEmail';
+import Footer from './Footer';
 
 class Dashboard extends Component{
   render(){
@@ -11,6 +12,7 @@ class Dashboard extends Component{
         <Navbar />
         <StatSection />
         <RecentEmail />
+        <Footer />
       </div>
     )
   }
