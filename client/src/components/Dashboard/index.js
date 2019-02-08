@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Navbar from './Navbar';
+import Navbar from '../AdminHeader/Navbar';
 import StatSection from './StatSection';
 import RecentEmail from './RecentEmail';
 import Footer from './Footer';
