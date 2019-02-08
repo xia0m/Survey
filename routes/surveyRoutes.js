@@ -22,6 +22,11 @@ module.exports = app => {
         res.send('thanks for voting');
     });
 
+    app.get('/api/templates',requireLogin, (req,res)=>{
+        const survey={body:'This is just a sample, the final email sent out will be your actual email body',id:'theSurveyId'};
+        res.send(surveyTemplate(survey));
+    })
+
     app.post('/api/surveys/webhooks',(req,res)=>{
 
         const p = new Path('/api/surveys/:surveyId/:choice');

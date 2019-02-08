@@ -78,7 +78,7 @@ module.exports = (survey)=>{
   				margin-top: 4rem;
   				background-color: #5E34B1;
   				color: white;
-  				padding: 5rem;
+  				padding: 3rem;
   			}
   			span {
   				padding: 0.5rem;
@@ -95,7 +95,9 @@ module.exports = (survey)=>{
         	</head>
           <body>
 						<div style="text-align:center">
+							
 								<h1>Ez Survey</h1>
+							<div style="padding:5em">
 								<h2>We'd like your input!</h2>
 								<p>Please, help us answer the following question:</p>
 								<h3>${survey.body}</h3>
@@ -103,7 +105,7 @@ module.exports = (survey)=>{
 										<a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
 										<a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
 								</div>
-
+							</div>
 								<footer>
 									<span>Ez Survey &copy; 2018</span>
 								</footer>
