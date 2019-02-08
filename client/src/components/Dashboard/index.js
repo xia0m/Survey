@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Navbar from './Navbar';
 import StatSection from './StatSection';
+import RecentEmail from './RecentEmail';
 
 class Dashboard extends Component{
   render(){
@@ -9,6 +10,7 @@ class Dashboard extends Component{
       <div className="grey lighten-4">
         <Navbar />
         <StatSection />
+
       </div>
     )
   }
