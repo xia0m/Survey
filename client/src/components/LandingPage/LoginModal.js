@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../node_modules/materialize-social/materialize-social.css';
+import '../../../node_modules/materialize-social/materialize-social.css';
 
 const LoginModal = ()=>(
   <div id="login-modal" className="modal">

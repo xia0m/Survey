@@ -7,7 +7,7 @@ import * as actions from '../actions';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 
-import Landing from './Landing';
+import Landing from './LandingPage/Landing';
 
 import '../css/main.css'
 

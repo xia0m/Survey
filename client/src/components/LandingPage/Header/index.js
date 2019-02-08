@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import Payments from '../Payments';
+import Payments from '../../Payments';
 
 import Showcase from './Showcase';
 import Navbar from './Navbar';
