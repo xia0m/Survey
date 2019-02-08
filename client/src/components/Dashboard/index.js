@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import Navbar from '../AdminHeader/Navbar';
-import StatSection from './StatSection';
+import StatSection from '../StatCard/StatSection';
 import RecentEmail from './RecentEmail';
-import Footer from './Footer';
+import Footer from '../AdminFooter/Footer';
 
 class Dashboard extends Component{
   render(){
