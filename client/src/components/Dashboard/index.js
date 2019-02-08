@@ -10,7 +10,7 @@ class Dashboard extends Component{
       <div className="grey lighten-4">
         <Navbar />
         <StatSection />
-
+        <RecentEmail />
       </div>
     )
   }
