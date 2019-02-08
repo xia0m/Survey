@@ -12,11 +12,12 @@ class SurveyList extends Component {
 	renderSurveys(){
 		return this.props.surveys.map(survey=>{
 			return (
-				<div className="container">
-				<div className="card blue lighten-2 white-text" key={survey._id}>
+				<div className="col s12 m6 l6" key={survey._id}>
+				<div className="card blue lighten-2 white-text" >
+				
 					<div className="card-content">
-						<span className="card-title">{survey.title}</span>
-						<p>{survey.body}</p>
+						<span className="card-title truncate">{survey.title}</span>
+						<p className="truncate">{survey.body}</p>
 						<p className="right">
 							Sent on: {new Date(survey.dateSent).toLocaleDateString()}
 						</p>
@@ -33,9 +34,11 @@ class SurveyList extends Component {
     
   render() {
     return (
-      <div>
-        {this.renderSurveys()}
-      </div>
+      <div className="container">
+				<div className="row">
+        	{this.renderSurveys()}
+      	</div>
+			</div>
     )
   };
 }

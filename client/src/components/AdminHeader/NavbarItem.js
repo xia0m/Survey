@@ -3,10 +3,10 @@ import React from 'react';
 const NavbarItem = ()=>(
   <ul className='right'>
     <li class='active'>
-      <a href='#'>Dashboard</a>
+      <a href='/dashboard'>Dashboard</a>
     </li>
     <li>
-      <a href='#'>Emails</a>
+      <a href='/emails'>Emails</a>
     </li>
     <li>
       <a href='#'>Templates</a>
