@@ -4,13 +4,14 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 
 
-// import Dashboard from './Dashboard';
+import DashboardOld from './Dashboard';
 import Dashboard from './Dashboard/'
 import SurveyNew from './surveys/SurveyNew';
 
 
 import Landing from './LandingPage/Landing';
 // import LandingPage from './LandingPage/index';
+import SurveyList from './surveys/SurveyList';
 
 
 import '../css/main.css'
@@ -31,6 +32,7 @@ class App extends Component {
 						<div>
 							<Route exact path="/" component={Landing} />
 							<Route exact path="/surveys" component={Dashboard} />
+							<Route exact path="/emails" component={DashboardOld} />
 							<Route path="/surveys/new" component={SurveyNew} />
 							
 						</div>

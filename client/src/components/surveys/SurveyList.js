@@ -12,7 +12,8 @@ class SurveyList extends Component {
 	renderSurveys(){
 		return this.props.surveys.map(survey=>{
 			return (
-				<div className="card darken-1" key={survey._id}>
+				<div className="container">
+				<div className="card blue lighten-2 white-text" key={survey._id}>
 					<div className="card-content">
 						<span className="card-title">{survey.title}</span>
 						<p>{survey.body}</p>
@@ -21,9 +22,10 @@ class SurveyList extends Component {
 						</p>
 					</div>
 					<div className="card-action">
-						<a href="#">Yes: {survey.yes}</a>
-						<a href="#">No: {survey.no}</a>
+						<a href="#" className="white-text">Yes: {survey.yes}</a>
+						<a href="#" className="white-text">No: {survey.no}</a>
 					</div>
+				</div>
 				</div>
 			)
 		})
