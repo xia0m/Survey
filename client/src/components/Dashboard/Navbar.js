@@ -6,10 +6,10 @@ import NavbarItem from './NavbarItem'
 class Navbar extends Component{
   render(){
     return(
-      <nav className="purple lighten-1">
-        <div className="container">
-          <div className="nav-wrapper">
-            <a href="/surveys" className="brand-logo">Ez Survey</a>
+      <nav className='purple lighten-1'>
+        <div className='container'>
+          <div className='nav-wrapper'>
+            <a href='/surveys' className='brand-logo'>Ez Survey</a>
 
             <ul>
               <NavbarItem />
