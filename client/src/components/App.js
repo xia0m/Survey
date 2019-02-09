@@ -8,6 +8,7 @@ import * as actions from '../actions';
 import Dashboard from './Dashboard/'
 import SurveyNew from './surveys/SurveyNew';
 import Emails from '../containers/Emails/';
+import Templates from '../containers/Templates/';
 
 
 import Landing from './LandingPage/Landing';
@@ -34,6 +35,7 @@ class App extends Component {
 							<Route exact path="/" component={Landing} />
 							<Route exact path="/surveys" component={Dashboard} />
 							<Route exact path="/emails" component={Emails} />
+							<Route exact path="/templates" component={Templates} />							
 							<Route path="/surveys/new" component={SurveyNew} />
 							
 						</div>

@@ -9,10 +9,10 @@ const NavbarItem = ()=>(
       <a href='/emails'>Emails</a>
     </li>
     <li>
-      <a href='#'>Templates</a>
+      <a href='/templates'>Templates</a>
     </li>
     <li>
-      <a href='#'>Users</a>
+      <a href='/users'>Users</a>
     </li>
   </ul>
 )
