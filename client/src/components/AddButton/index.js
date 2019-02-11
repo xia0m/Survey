@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PaymentModal from '../Modal/PaymentModal';
+
 const AddButton =()=>(
   <div className="fixed-action-btn">
     <a className="btn-floating btn-large red">
@@ -7,14 +9,12 @@ const AddButton =()=>(
     </a>
     <ul>
       <li>
-        <a href="#post-modal" className="modal-trigger btn-floating green">
+        <a href="/surveys/new" className="btn-floating green">
           <i className="material-icons">mode_edit</i>
         </a>
       </li>
       <li>
-        <a href="#credit-modal" className="modal-trigger btn-floating blue lighten-1">
-          <i className="material-icons">attach_money</i>
-        </a>
+        <PaymentModal />  
       </li>
     </ul>
   </div>
