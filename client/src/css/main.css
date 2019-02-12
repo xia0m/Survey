@@ -29,5 +29,9 @@
 
 #login-modal .btn{
   width:290px;
+}
 
+.main-content {
+  min-height:80vh;
+  padding-top:1.5rem;
 }

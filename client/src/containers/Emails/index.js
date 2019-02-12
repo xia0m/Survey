@@ -5,7 +5,9 @@ import SurveyList from '../../components/surveys/SurveyList';
 class Emails extends Component{
   render(){
     return(
-      <SurveyList />
+      <div className='main-content'>
+        <SurveyList />
+      </div>
     )
   }
 }
