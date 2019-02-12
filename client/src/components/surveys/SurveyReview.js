@@ -9,9 +9,10 @@ const SurveyReview = ({onCancle, formValues,submitSurvey,history}) => {
     // console.log('formValues is ', formValues);
     const reviewFields = formFields.map(field=>{
         return (
-            <div key={field.name}>
+            <div key={field.name} className='review-form'>
                 <label>{field.label}</label>
-                <div>{formValues[field.name]}</div>
+                <h5>{formValues[field.name]}</h5>
+                <div className='divider'></div>
             </div>
         );
     })
@@ -19,14 +20,15 @@ const SurveyReview = ({onCancle, formValues,submitSurvey,history}) => {
     <div>
         <h5>Please confirm your entries</h5>
         {reviewFields}
+
         <button className="yellow darken-3 white-text btn-flat"
             onClick={onCancle} >
             Back
         </button>
         <button className="green btn-flat right white-text"
             onClick={()=>submitSurvey(formValues,history)}>
-            Send Survey
-            <i className="material-icons right">email</i>
+            Send
+            <i className="material-icons right">send</i>
         </button>
     </div>
   );
