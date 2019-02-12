@@ -7,11 +7,7 @@ import SurveyList from '../../components/surveys/SurveyList';
 class Emails extends Component{
   render(){
     return(
-      <div className="grey lighten-4">
-       
-        <SurveyList />
-       
-      </div>
+      <SurveyList />
     )
   }
 }

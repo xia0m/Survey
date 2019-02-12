@@ -35,7 +35,7 @@ class App extends Component {
     return(
         <div>
           <BrowserRouter>
-						<div>
+						<div className='grey lighten-4'>
 							<Route exact path="/" component={Landing} />
 							<Navbar />
 							<Route exact path="/dashboard" component={Dashboard} />
