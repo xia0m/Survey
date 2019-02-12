@@ -2,19 +2,21 @@ import React,{Component}from 'react';
 
 import NavbarItem from './NavbarItem'
 
+import {NavLink} from 'react-router-dom';
+
 
 class Navbar extends Component{
   render(){
     return(
-      <div>
+      
       <nav className='purple lighten-1'>
         <div className='container'>
           <div className='nav-wrapper'>
-            <a href='/surveys' className='brand-logo'>Ez Survey</a>
+            <a href='/dashboard' className='brand-logo'>Ez Survey</a>
 
-            <ul>
-              <NavbarItem />
-            </ul>
+            
+            <NavbarItem />
+            
           </div>
         </div>
         <ul id='user-dropdown' className='dropdown-content'>
@@ -22,8 +24,9 @@ class Navbar extends Component{
           <li className='divider'></li>
           <li><a href='/'>Logout</a></li>
         </ul>
+       
       </nav>
-      </div>
+      
     )
   }
   

@@ -11,6 +11,7 @@ class Dashboard extends Component{
     return(
       <div className="grey lighten-4">
         <Navbar />
+        
         <StatSection />
         <RecentEmail />
         <Footer />
