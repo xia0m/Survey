@@ -1,10 +1,22 @@
 //admin folder
-import React from 'react';
+import React, {Component} from 'react';
 
-const Admin = ()=>(
-  <div>
+import Navbar from '../../components/AdminHeader/Navbar';
+import Footer from '../../components/AdminFooter/Footer';
+import AddButton from '../../components/AddButton/';
 
-  </div>
-)
+
+class Admin extends Component{
+  render(){
+    return(
+      <div>
+        <Navbar />
+        <Footer />
+        <AddButton />
+      </div>
+    )
+  }
+}
+ 
 
 export default Admin;

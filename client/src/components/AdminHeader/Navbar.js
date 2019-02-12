@@ -14,7 +14,7 @@ class Navbar extends Component{
           <div className='nav-wrapper'>
             <a href='/dashboard' className='brand-logo'>Ez Survey</a>
 
-            
+            {console.log(this.props)}
             <NavbarItem />
             
           </div>

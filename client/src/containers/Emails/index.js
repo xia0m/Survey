@@ -8,9 +8,9 @@ class Emails extends Component{
   render(){
     return(
       <div className="grey lighten-4">
-        <Navbar />
+       
         <SurveyList />
-        <Footer />
+       
       </div>
     )
   }

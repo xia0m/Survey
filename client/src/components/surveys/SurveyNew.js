@@ -3,9 +3,6 @@ import {reduxForm} from 'redux-form';
 import SurveyForm from './SurveyForm';
 import SurveyReview from './SurveyReview';
 
-import Navbar from '../AdminHeader/Navbar';
-import Footer from '../AdminFooter/Footer';
-import AddButton from '../AddButton/';
 
 import './style.css';
 
@@ -26,7 +23,6 @@ class SurveyNew extends Component {
   render() {
     return (
       <div className='grey lighten-4'>
-				<Navbar />
 				<div className='container'>
 					<div className='card'>
 						<div className='card-content survey-form'>
@@ -34,8 +30,6 @@ class SurveyNew extends Component {
 						</div>
 					</div>
 				</div>
-				<Footer />
-				<AddButton />
       </div>
     )
   }

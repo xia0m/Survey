@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-const NavbarItem = ()=>(
+const NavbarItem = ({location})=>(
   // <ul className='right'>
   //   <li class='active'>
   //     <a href='/dashboard'>Dashboard</a>
@@ -20,17 +20,28 @@ const NavbarItem = ()=>(
   // </ul>
   <ul className='right'>
     <li>
-    <NavLink exact to='/dashboard'>Dashboard</NavLink>
-    
+      <NavLink 
+        exact 
+        activeStyle={{backgroundColor:'rgba(0, 0, 0, 0.1)'}} 
+        to='/dashboard'>
+        Dashboard
+      </NavLink>
     </li>
     <li>
-    <NavLink exact to='/surveys'>Surveys</NavLink>
+      <NavLink 
+        activeStyle={{backgroundColor:'rgba(0, 0, 0, 0.1)'}} 
+        to='/surveys'>
+        Surveys
+      </NavLink>
     </li>
     <li>
-    <NavLink exact to='/templates'>Templates</NavLink>
+      <NavLink 
+        exact
+        activeStyle={{backgroundColor:'rgba(0, 0, 0, 0.1)'}}
+        to='/templates'>
+        Templates
+      </NavLink>
     </li>
-
-
   </ul>
 )
 

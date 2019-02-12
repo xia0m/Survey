@@ -10,6 +10,10 @@ import SurveyNew from './surveys/SurveyNew';
 import Emails from '../containers/Emails/';
 import Templates from '../containers/Templates/';
 
+import Navbar from './AdminHeader/Navbar';
+import Footer from './AdminFooter/Footer';
+import AddButton from './AddButton/';
+
 
 import Landing from './LandingPage/Landing';
 // import LandingPage from './LandingPage/index';
@@ -33,11 +37,13 @@ class App extends Component {
           <BrowserRouter>
 						<div>
 							<Route exact path="/" component={Landing} />
+							<Navbar />
 							<Route exact path="/dashboard" component={Dashboard} />
 							<Route exact path="/surveys" component={Emails} />
 							<Route exact path="/templates" component={Templates} />							
 							<Route path="/surveys/new" component={SurveyNew} />
-							
+							<Footer />
+							<AddButton />
 						</div>
            </BrowserRouter>
         </div>

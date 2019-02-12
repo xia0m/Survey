@@ -10,12 +10,8 @@ class Dashboard extends Component{
   render(){
     return(
       <div className="grey lighten-4">
-        <Navbar />
-        
         <StatSection />
-        <RecentEmail />
-        <Footer />
-        <AddButton />
+        <RecentEmail />     
       </div>
     )
   }
