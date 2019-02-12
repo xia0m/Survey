@@ -2,9 +2,6 @@ import React,{Component}from 'react';
 
 import NavbarItem from './NavbarItem'
 
-import {NavLink} from 'react-router-dom';
-
-
 class Navbar extends Component{
   render(){
     return(
@@ -13,10 +10,7 @@ class Navbar extends Component{
         <div className='container'>
           <div className='nav-wrapper'>
             <a href='/dashboard' className='brand-logo'>Ez Survey</a>
-
-            {console.log(this.props)}
             <NavbarItem />
-            
           </div>
         </div>
         <ul id='user-dropdown' className='dropdown-content'>
@@ -24,7 +18,6 @@ class Navbar extends Component{
           <li className='divider'></li>
           <li><a href='/'>Logout</a></li>
         </ul>
-       
       </nav>
       
     )

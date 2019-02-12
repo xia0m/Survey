@@ -8,7 +8,7 @@ class PaymentModal extends Component{
 
   render(){
     return(
-      <a  className='btn-floating blue lightne-1'>
+      <a>
         <StripeCheckout
           name='Survey'
           description='$5 for 5'
@@ -20,8 +20,6 @@ class PaymentModal extends Component{
             <i className="material-icons">attach_money</i>
           </a>
         </StripeCheckout>
-        
-        
       </a>
     )
   }
