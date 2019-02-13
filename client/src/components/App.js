@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {BrowserRouter, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
@@ -21,6 +21,7 @@ import Landing from './LandingPage/Landing';
 
 
 import '../css/main.css'
+import NotFound from './404';
 
 
 
@@ -36,7 +37,6 @@ class App extends Component {
         <div>
           <BrowserRouter>
 						<div className='grey lighten-4'>
-					
 						<Route exact path="/" render={()=>(
 							(this.props.auth!==null && this.props.auth!==false) ? (
 								<Redirect to='/dashboard' />
@@ -44,14 +44,17 @@ class App extends Component {
 								<Landing />
 							)
 						)} />
-						{console.log('auth is ',this.props.auth)}
+					
 								{	(this.props.auth!==false) ? (
 								<div>
 									<Navbar />
-									<Route exact path="/dashboard" component={Dashboard} />
-									<Route exact path="/surveys" component={Emails} />
-									<Route exact path="/templates" component={Templates} />							
-									<Route path="/surveys/new" component={SurveyNew} />
+									<Switch>
+										<Route exact path="/dashboard" component={Dashboard} />
+										<Route exact path="/surveys" component={Emails} />
+										<Route exact path="/templates" component={Templates} />							
+										<Route path="/surveys/new" component={SurveyNew} />
+										<Route component={NotFound} />
+									</Switch>
 									<Footer />
 									<AddButton />
 								</div>)
