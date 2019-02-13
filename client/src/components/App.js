@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
@@ -36,14 +36,29 @@ class App extends Component {
         <div>
           <BrowserRouter>
 						<div className='grey lighten-4'>
-							<Route exact path="/" component={Landing} />
-							<Navbar />
-							<Route exact path="/dashboard" component={Dashboard} />
-							<Route exact path="/surveys" component={Emails} />
-							<Route exact path="/templates" component={Templates} />							
-							<Route path="/surveys/new" component={SurveyNew} />
-							<Footer />
-							<AddButton />
+					
+						<Route exact path="/" render={()=>(
+							(this.props.auth!==null && this.props.auth!==false) ? (
+								<Redirect to='/dashboard' />
+							):(
+								<Landing />
+							)
+						)} />
+						{console.log('auth is ',this.props.auth)}
+								{	(this.props.auth!==false) ? (
+								<div>
+									<Navbar />
+									<Route exact path="/dashboard" component={Dashboard} />
+									<Route exact path="/surveys" component={Emails} />
+									<Route exact path="/templates" component={Templates} />							
+									<Route path="/surveys/new" component={SurveyNew} />
+									<Footer />
+									<AddButton />
+								</div>)
+								:
+								<Redirect to='/' />
+								}
+							
 						</div>
            </BrowserRouter>
         </div>
@@ -51,6 +66,9 @@ class App extends Component {
 		}
 };
 
+function mapStateToProps({auth}){
+	return {auth};
+}
 
 
-export default connect(null,actions)(App);
+export default connect(mapStateToProps,actions)(App);

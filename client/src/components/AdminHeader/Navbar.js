@@ -14,9 +14,9 @@ class Navbar extends Component{
           </div>
         </div>
         <ul id='user-dropdown' className='dropdown-content'>
-          <li><a href='/profile'>Profile</a></li>
+          <li><a href='/#'>Profile</a></li>
           <li className='divider'></li>
-          <li><a href='/'>Logout</a></li>
+          <li><a href='/api/logout'>Logout</a></li>
         </ul>
       </nav>
       
