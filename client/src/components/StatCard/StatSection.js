@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
+import {connect} from 'react-redux';
 
 import StatCard from './StatCard';
 
 class StatSection extends Component{
 
   render(){
+    console.log(this.props.auth);
     return(
       <section className="section center">
         <div className="row">
@@ -24,7 +26,7 @@ class StatSection extends Component{
             cardStyle={'teal teal-text'}
             iconName={'account_balance'}
             cardName={'Credits Avaliable'}
-            cardNumber={15}
+            cardNumber={this.props.auth?this.props.auth.credits:0}
           />
           <StatCard 
             cardStyle={'green green-text'}
@@ -37,7 +39,11 @@ class StatSection extends Component{
     )
   }
 }
+
+function mapStateToProps({auth}){
+	return {auth};
+}
   
 
 
-export default StatSection;
+export default connect(mapStateToProps,null)(StatSection);
