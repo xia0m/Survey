@@ -7,6 +7,7 @@ class StatSection extends Component{
 
   render(){
     console.log(this.props.auth);
+    const {auth} = this.props;
     return(
       <section className="section center">
         <div className="row">
@@ -14,19 +15,19 @@ class StatSection extends Component{
             cardStyle={'red red-text'}
             iconName={'feedback'}
             cardName={'Feedbacks'}
-            cardNumber={2}
+            cardNumber={auth?auth.feedbacks:0}
           />
           <StatCard 
             cardStyle={'blue blue-text'}
             iconName={'email'}
             cardName={'Email Sent'}
-            cardNumber={5}
+            cardNumber={auth?auth.emailCount:0}
           />
           <StatCard 
             cardStyle={'teal teal-text'}
             iconName={'account_balance'}
             cardName={'Credits Avaliable'}
-            cardNumber={this.props.auth?this.props.auth.credits:0}
+            cardNumber={auth?auth.credits:0}
           />
           <StatCard 
             cardStyle={'green green-text'}
