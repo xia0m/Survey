@@ -5,7 +5,8 @@ const TableContent = ()=>(
     <tr>
       <th>Title</th>
       <th>Date Sent</th>
-      <th>Response</th>
+      <th>Responded</th>
+      <th>Response Date</th>
       <th></th>
     </tr>
   </thead>

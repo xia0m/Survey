@@ -10,7 +10,7 @@ const RecentEmail = ()=>(
       <div className='col s12 l12 m12'>
         <div className='card'>
           <div className='card-content'>
-            <span className='card-title'>Recent Emails</span>
+            <span className='card-title'>Recent Surveys</span>
             <table className='striped'>
               <TableHead />
               <TableContent />

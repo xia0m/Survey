@@ -1,32 +1,50 @@
-import React from 'react';
+import React,{Component} from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {fetchRecentSurveys} from '../../actions';
 
-const TableContent = ()=>(
-  <tbody>
-    <tr>
-      <td>Email One</td>
-      <td>Dec, 2018</td>
-      <td>Yes</td>
-      <td>
-        <a href='/email' className='btn blue lighten-2'>Details</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Email Two</td>
-      <td>Jan, 2019</td>
-      <td>No</td>
-      <td>
-        <a href='/email' className='btn blue lighten-2'>Details</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Email Three</td>
-      <td>Feb, 2019</td>
-      <td>Yes</td>
-      <td>
-        <a href='/email' className='btn blue lighten-2'>Details</a>
-      </td>
-    </tr>
-  </tbody>
-)
+class TableContent extends Component{
 
-export default TableContent;
+  componentDidMount(){
+    this.props.fetchRecentSurveys();
+  }
+
+  renderContent(){
+    return this.props.surveys.map(entry=>{
+      return(
+        <tr id='entry._id'>
+        <td>{entry.title}</td>
+        <td>{new Date(entry.dateSent).toLocaleDateString()}</td>
+        <td>{(entry.yes!==0||entry.no!==0)?'Yes':'No'}</td>
+        <td>{new Date(entry.lastResponded).toLocaleDateString()}</td>
+        <td>
+          <Link to='/surveys' className='btn blue lighten-2'>Details</Link>
+        </td>
+      </tr>
+      )
+    })
+  }
+
+
+  render(){
+    console.log('survey props is ',this.props.surveys);
+    return(
+      <tbody>
+       {this.props.surveys.length!==0 ? 
+        this.renderContent()
+        : <tr><td>You have no surveys, pleae click the add button to add new surveys</td></tr>
+      }
+      </tbody>
+    )
+  }
+
+}
+
+function mapStateToProps ({surveys}){
+  return {
+      surveys
+  }
+}
+
+
+export default connect(mapStateToProps,{fetchRecentSurveys})(TableContent);

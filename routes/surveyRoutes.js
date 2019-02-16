@@ -19,6 +19,12 @@ module.exports = app => {
        res.send(surveys);
     });
 
+    app.get('/api/recent-surveys',requireLogin, async (req,res)=>{
+        const surveys = await Survey.find({_user:req.user.id}).sort({dateSent:-1}).limit(3)
+        .select({recipients:false});
+       res.send(surveys);
+    })
+
     app.get('/api/surveys/:surveyId/:choice',(req,res)=>{
         res.send('thanks for voting');
     });
