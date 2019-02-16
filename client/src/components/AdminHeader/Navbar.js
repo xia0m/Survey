@@ -1,4 +1,5 @@
 import React,{Component}from 'react';
+import {connect} from 'react-redux';
 
 import NavbarItem from './NavbarItem'
 
@@ -14,7 +15,7 @@ class Navbar extends Component{
           </div>
         </div>
         <ul id='user-dropdown' className='dropdown-content'>
-          <li><a href='/#'>Profile</a></li>
+          <li><a href='/#'>${this.props.auth&&this.props.auth.credits}</a></li>
           <li className='divider'></li>
           <li><a href='/api/logout'>Logout</a></li>
         </ul>
@@ -25,4 +26,8 @@ class Navbar extends Component{
   
 }
 
-export default Navbar;
+function mapStateToProps({auth}){
+  return {auth};
+}
+
+export default connect(mapStateToProps)(Navbar);
