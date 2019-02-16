@@ -8,6 +8,7 @@ const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplates');
 
 const Survey = mongoose.model('surveys');
+const User = mongoose.model('users');
 
 module.exports = app => {
 
@@ -28,7 +29,7 @@ module.exports = app => {
     })
 
     app.post('/api/surveys/webhooks',(req,res)=>{
-
+        
         const p = new Path('/api/surveys/:surveyId/:choice');
 
         const events = _.chain(req.body).map(event=>{
@@ -40,7 +41,7 @@ module.exports = app => {
         })
         .compact()
         .uniqBy('email','surveyId')
-        .each(({surveyId,email,choice})=>{
+        .each(async ({surveyId,email,choice})=>{
             Survey.updateOne({
                 _id:surveyId,
                 recipients:{
@@ -49,6 +50,12 @@ module.exports = app => {
             },{
                 $inc:{[choice]:1},
                 $set:{'recipients.$.responded':true}
+            }).exec();
+            const result = await Survey.findOne({_id:surveyId});
+            User.updateOne({
+                _id:result._user
+            },{
+                $inc:{'feedbacks':1}
             }).exec();
         })
         .value();
