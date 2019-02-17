@@ -1,5 +1,6 @@
 import React,{Component}from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 import NavbarItem from './NavbarItem'
 
@@ -30,4 +31,4 @@ function mapStateToProps({auth}){
   return {auth};
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default withRouter(connect(mapStateToProps)(Navbar));
