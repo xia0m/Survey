@@ -2,7 +2,8 @@ import React from 'react';
 
 const ContactUs = ()=>(
   <div className="center">
-    <a href="#" className="btn brn-large grey modal-trigger">Sign Up For Free</a>
+    <a href="#login-modal" className="btn brn-large grey modal-trigger">Sign Up For Free</a>
+
     <br />
     <br />
     <h5>

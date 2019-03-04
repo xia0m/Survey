@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Header/';
 import Feature from './Feature/';
 import Footer from './Footer/';
-import LoginModal from './LoginModal';
+import LoginModal from '../Modal/LoginModal';
 
 const Landing = () => {
     return (

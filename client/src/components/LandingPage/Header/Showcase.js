@@ -11,8 +11,8 @@ const Showcase = () => {
             <br />
             <br />
             <a href="#aboutus" className="btn btn-large white purple-text">Learn More</a>
-            <a href="#" className="btn btn-large purple">Sign Up</a>
-          
+            <a href="#login-modal" className="btn btn-large purple modal-trigger">Sign Up</a>
+
           </div>
         </div>
     </div>
